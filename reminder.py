@@ -68,7 +68,9 @@ def send_email():
     SMTP_USER = safe_str(os.getenv("SMTP_USER", ""))
     SMTP_PASS = safe_str(os.getenv("SMTP_PASS", ""))
     FROM_EMAIL = safe_str(os.getenv("FROM_EMAIL", SMTP_USER))
-    TO_EMAIL = safe_str(os.getenv("TO_EMAIL", SMTP_USER))
+    TO_EMAIL_RAW = safe_str(os.getenv("TO_EMAIL", SMTP_USER))
+    # Support multiple recipients separated by comma
+    TO_EMAILS = [email.strip() for email in TO_EMAIL_RAW.split(',') if email.strip()]
 
     # debug prints (safe: don't print passwords)
     print("DEBUG envs types:")
@@ -76,7 +78,7 @@ def send_email():
     print(" SMTP_PORT:", type(SMTP_PORT), SMTP_PORT)
     print(" SMTP_USER:", type(SMTP_USER), SMTP_USER)
     print(" FROM_EMAIL:", type(FROM_EMAIL), FROM_EMAIL)
-    print(" TO_EMAIL:", type(TO_EMAIL), TO_EMAIL)
+    print(" TO_EMAILS:", type(TO_EMAILS), TO_EMAILS)
     # do NOT print SMTP_PASS
 
     index_file = os.path.join(os.path.dirname(__file__), '.reminder_index')
@@ -92,7 +94,7 @@ def send_email():
     msg = MIMEText(message_text, "plain", "utf-8")
     msg['Subject'] = "Daily Reminder: Kadhai Contribution"
     msg['From'] = FROM_EMAIL
-    msg['To'] = TO_EMAIL
+    msg['To'] = ', '.join(TO_EMAILS)
 
     try:
         # connect and send
@@ -103,7 +105,7 @@ def send_email():
             # explicit ensure str for login params
             server.login(safe_str(SMTP_USER), safe_str(SMTP_PASS))
             # sendmail expects list of recipients; pass a list
-            server.sendmail(FROM_EMAIL, [TO_EMAIL], msg.as_string())
+            server.sendmail(FROM_EMAIL, TO_EMAILS, msg.as_string())
         print(f"✅ Email sent successfully at {datetime.utcnow().isoformat()} (UTC). Message {msg_idx+1}/{len(messages)}")
     except Exception as e:
         # print traceback to logs (Action will capture it)
