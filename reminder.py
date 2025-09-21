@@ -48,9 +48,12 @@ messages = [
 ]
 
 def get_next_index(index_file, total):
+    idx = 0
     try:
         with open(index_file, 'r') as f:
-            idx = int(f.read().strip())
+            content = f.read().strip()
+            if content:
+                idx = int(content)
     except Exception:
         idx = 0
     next_idx = idx % total
