@@ -13,17 +13,25 @@ load_dotenv()
 
 messages = [
     "🍳 Hey Bhavi! Just a friendly reminder about the kadhai contribution of ₹216. Hope you're doing well! 😊\n\n(This is an automated reminder)",
-    "💸 Roses are red, curries are divine,\nBut nothing gets cooked without your ₹216. 🍲\nPay up, legend, before the onions start charging interest. 🧅💀\n\n-- Automated Reminder (Poetry Dept.)",
-    "🌌 Bhavi, life is short. You breathe, you blink, you die… but somewhere in between, you still owe ₹216 for the kadhai. ⏳\nBe remembered as a person of honor, not unpaid cookware debt.\n\n-- Automated Reminder (Existential Division)",
-    "🔥 Breaking News: Kadhai fund collapses after Bhavi withholds ₹216. Markets in turmoil. Gordon Ramsay crying in a corner. 📉😭",
-    "✨ 'Great people aren’t remembered for what they kept, but for the ₹216 they gave towards a kadhai.' - Definitely Not Aristotle 📜",
-    "🌱 Every seed grows with water. Every friendship grows with trust. And every kadhai only grows with Bhavi’s ₹216. 🪴",
-    "🎤 'I have a dream… that one day, Bhavi will finally pay his ₹216 for the kadhai.' 🏛️",
-    "☕ Bhavi, you’ve ignored this ₹216 so long that even your coffee is judging you. ☕😒",
-    "⚡ Imagine: thunder cracks, lightning strikes, and a voice from the heavens screams — 'Where is Bhavi’s ₹216?!' ⚡",
-    "😂 Bhavi, I set this reminder daily because faith is eternal. Somewhere, deep down, I believe you’ll pay. 🙏"
-]
 
+   "🎤 Imagine the crowd cheering: ‘Bhavi did it! The kadhai is complete!’ All it takes is ₹216 to make the story real. This is an automated reminder.",
+
+    "🌌 Bhavi, life is short. You breathe, you blink, you die… but somewhere in between, you still owe ₹216 for the kadhai. This is an automated reminder.",
+
+    "📰 Breaking News: The kadhai fund is still short by ₹216. Economists confused 📉, chefs worried 👨‍🍳, friends waiting. This is an automated reminder.",
+
+    "📜 ‘Great people aren’t remembered for what they kept, but for the ₹216 they gave towards a kadhai.’ Time to make history — This is an automated reminder.",
+
+    "🌱 Every seed grows with water. Every friendship grows with trust. And this kadhai fund grows only when Bhavi pays ₹216. This is an automated reminder.",
+
+    "🎤 I have a dream… that one day, Bhavi will finally pay his ₹216 for the kadhai. Until then, this is an automated reminder.",
+
+    "⚡ Bhavi, thunder strikes, lightning cracks, and somewhere a kadhai still waits for ₹216. Don’t test destiny — this is an automated reminder.",
+
+    "🙏 Faith is eternal. That’s why I send this daily. Deep down, I believe you’ll pay ₹216 for the kadhai. This is an automated reminder.",
+
+    "🙏 Heaven is closed, Bhavi. Not because you sinned, but because St. Peter is short ₹216 for the kadhai fund. They don’t take excuses at the gate. This is an automated reminder."
+]
 def get_next_index(index_file, total):
     idx = 0
     try:
